@@ -17,3 +17,8 @@
       }, false)
     })
   })()
+
+  
+function restaurarVariable (){
+    localStorage.setItem("tipo", 'otro');
+}

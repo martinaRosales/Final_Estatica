@@ -49,6 +49,7 @@ productos[2]= P3D;
 
 const botonSelect = document.getElementById("botonSelect");
 
+
 botonSelect.addEventListener('click', ()=>{
     var productType = document.getElementById("producto").value;
         switch(productType){
@@ -91,6 +92,8 @@ function ordenarProductos(arrayName){
     tipoStorage = localStorage.getItem("tipo");
     arrayProductos = tipoProducto(arrayName);
     orden = localStorage.getItem("orden");
+    console.log(tipoStorage);
+    console.log(orden);
     var arrayOrdenado = [];
     if (tipoStorage == arrayName ){
         switch (orden){
