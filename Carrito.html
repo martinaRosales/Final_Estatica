@@ -17,7 +17,6 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
-<script src="validacion.js"></script>
 </head>
 
 <body background="Img/fondo.png">
@@ -109,7 +108,7 @@
                   <form id="datosTarjeta" class="row g-3 needs-validation" novalidate>
                    <div>
                         <span>Número tarjeta</span>
-                        <input type="text" class="form-control" placeholder="#### #### #### ####" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}"  required >
+                        <input type="text" class="form-control" id="numTarjeta" placeholder="#### #### #### ####" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" required>
                         <div class="invalid-feedback"> 
                             Ingrese los números como figuran en su tarjeta
                         </div>
@@ -119,7 +118,7 @@
                    </div>
                    <div>
                         <span>Nombre tarjeta</span>
-                        <input type="text" class="form-control" pattern="[a-zA-Z]+\s?[a-zA-Z]*" required>
+                        <input type="text" class="form-control" id="nombreT" pattern="[a-zA-Z]+\s?[a-zA-Z]*" required>
                         <div class="invalid-feedback">
                             Ingrese el nombre como figura en su tarjeta.
                         </div>
@@ -129,7 +128,7 @@
                     </div>
                    <div>
                         <span>Fecha de expiración</span>
-                        <input type="text" class="form-control" pattern="[0-9]{2}/[0-9]{2}" placeholder="MM/YY" required>
+                        <input type="text" class="form-control" id="vencimiento" pattern="[0-9]{2}/[0-9]{2}" placeholder="MM/YY" required>
                         <div class="invalid-feedback">
                             Ingrese la fecha como figura en su tarjeta.
                         </div>
@@ -139,7 +138,7 @@
                    </div>
                     <div>
                         <span>Código de seguridad</span>
-                        <input type="text" class="form-control" pattern="[0-9]{3}" required>
+                        <input type="text" class="form-control" id="ccv" pattern="[0-9]{3}" required>
                         <div class="invalid-feedback">
                             ingrese el CCV como figura en su tarjeta.
                         </div>
@@ -157,27 +156,8 @@
               </div>
             </div>
           </div>
-            
-<script>
-              (() => {
-            'use strict'
-          
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-          
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-              form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-          
-                form.classList.add('was-validated')
-              }, false)
-            })
-          })()
-</script>
+
+<script type="text/javascript" src="funciones.js"></script>
 
     <footer class="page-footer font-small position-relative bottom-0">
         <div class="container row mt-2">
@@ -191,6 +171,6 @@
           </div>
         </div>
       </footer>
-      
+     
       </body>
       </html>    

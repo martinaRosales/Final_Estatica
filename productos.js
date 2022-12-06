@@ -133,7 +133,7 @@ function tipoProducto(arrayName){
             break;
             case "P3D":
                 typeProduct = productos[2];
-            break
+            break;
         }
         return typeProduct;
     }
