@@ -1,3 +1,5 @@
+//FALTA VER SI PUEDO HACER LAS VALIDACIONES A MANO
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'

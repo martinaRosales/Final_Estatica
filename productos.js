@@ -1,7 +1,4 @@
 
-//VER COMO HACER PARA QUE NO ME CAMBIE EL ORDEN EN ACCESORIOS POR EL ONLOAD
-//AGREGAR VALIDACIONES DE TARJETA Y DE ENCARGO
-
 //se crea el constructor de objetos
 
 function producto (id, nombre, precio, descripcion, imagen, stock, antiguedad ){
