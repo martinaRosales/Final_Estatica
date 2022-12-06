@@ -89,7 +89,6 @@ function tipoProducto(arrayName){
                 typeProduct = productos[2];
             break
         }
-        //mostrarProducto(typeProduct);
         return typeProduct;
     }
 }
