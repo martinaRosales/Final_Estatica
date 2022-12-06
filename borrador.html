@@ -64,3 +64,47 @@
     })
   })()
           </script>
+
+          
+//document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("encargo").addEventListener('submit',event => {
+  
+      if (!validarMail() || !validarMensaje()){
+          event.preventDefault();
+          event.stopPropagation();
+      } else {
+          form.classList.add('was-validated');
+      }
+  });
+  //});
+  function validarMail(){
+      inputMail = document.getElementById("mail");
+      mensajeMail = document.getElementById("mensajeMail");
+      esValido = false;
+      if (inputMail.value==""){
+          //inputMail.style.border = '2px solid red';
+          //mensajeMail.style.color = 'red';
+         // mensajeMail.innerHTML = "Debe ingresar un mail";
+         } else {
+          //inputMail.style.border = '0.5 px solid black';
+          //mensajeMail.innerHTML = "";
+          esValido = true;
+         }
+         return esValido;
+  }
+  
+  function validarMensaje (){
+      inputMensaje = document.getElementById("mensaje");
+      mensajeTxt = document.getElementById("mensajeTxt");
+      esValido = false;
+      if (inputMensaje.value==""){
+          inputMensaje.style.border = '2px solid red';
+          mensajeTxt.style.color = 'red';
+          mensajeTxt.innerHTML = "Debe ingresar un texto";
+         } else {
+          inputMensaje.style.border = '0.5 px solid black';
+          mensajeTxt.innerHTML = "";
+          esValido = true;
+         }
+         return esValido;
+  }

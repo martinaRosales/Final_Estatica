@@ -83,3 +83,17 @@ footer {
   background-color: #ffcadb;
 }
 
+#botonSelect {
+  border-radius: 4px;
+  background-color: #e91e63;
+  border:none;
+  color: white;
+}
+
+.invalido{
+  color: #ff4136;
+}
+
+.valido {
+  color: #198754;
+}

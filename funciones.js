@@ -19,6 +19,6 @@
   })()
 
   
-function restaurarVariable (){
+function restaurarVariable(){
     localStorage.setItem("tipo", 'otro');
 }
