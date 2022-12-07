@@ -9,8 +9,6 @@ body {
   min-height: 100vh;
   max-width: 100%;
   margin: 0 auto;
-  --textoDanger: #ef3c23;
-  --textoCorrect: #198754;
 }
 
 footer {
