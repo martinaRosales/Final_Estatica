@@ -148,7 +148,7 @@ function mostrarProducto(typeProduct){
         typeProduct.forEach(producto => {
             parametro = "'"+producto.nombre+"'";
             tarjeta = '<div class="card mx-2 mt-1 mb-2" style="width: 18rem; height: fit-content;" id="productos">'+
-            '<img src="'+producto.imagen+'" class="card-img-top mt-3" alt="'+producto.nombre+'">'+
+            '<img src="'+producto.imagen+'" class="card-img-top mt-3" alt=" foto '+producto.nombre+'">'+
             '<div class="card-body">'+
               '<h5 class="card-title" id="nombreProducto">'+producto.nombre+'</h5>'+
               '<p class="card-text">'+
