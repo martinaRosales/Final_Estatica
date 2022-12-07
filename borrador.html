@@ -108,3 +108,111 @@
          }
          return esValido;
   }
+
+  //FALTA VER SI PUEDO HACER LAS VALIDACIONES A MANO
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+
+  JUST IN CASE
+
+  function restaurarVariable(){
+    localStorage.setItem("tipo", 'otro');
+  }
+  
+  //constantes de formularios
+  
+  const numTarjeta = document.getElementById("numTarjeta");
+  const nombreT = document.getElementById("nombreT");
+  const vencimiento = document.getElementById("vencimiento");
+  const ccv = document.getElementById("ccv");
+  
+  const mail = document.getElementById("mail");
+  const mensaje = document.getElementById("mensaje");
+    
+  
+  
+  
+  
+  
+  function validarFormulario (form){
+    divInvalid = document.getElementById("invalido");
+    if (form=="datosTarjeta"){
+      if (!validarTarjeta(divInvalid)){
+        event.preventDefault();
+      } 
+    } else if (form=="encargos"){
+      if (!validarEncargo()){
+        event.preventDefault();
+      }
+    }
+  }
+  
+  
+  
+  function validarTarjeta(divInvalid){
+    var expReg = /[0-9]/;
+    formCompleto = true;
+    if (numTarjeta.value == "" || numTarjeta.value == null || expReg.test(parseInt(numTarjeta.value)) ){
+      formCompleto = false;
+      numTarjeta.style.border = "2px solid red";
+      divInvalid.style.display = "";
+    } else {
+      numTarjeta.style.border = "";
+      divInvalid.style.display = "block";
+    }
+    if (nombreT.value == "" || nombreT.value == null){
+      formCompleto = false;
+      nombreT.classList.add(".invalid");
+      divInvalid.style.display = "";
+    } else {
+      nombreT.classList.add(".valid");
+      divInvalid.style.display = "block";
+    }
+    if (vencimiento.value == "" || vencimiento.value == null){
+      formCompleto = false;
+    }
+    if (ccv.value == "" || ccv.value == null){
+      formCompleto = false;
+    }
+    return formCompleto;
+  }
+  
+  function validarEncargo(){
+    formCompleto = true;
+    console.log("primer form", formCompleto);
+    expReg_mail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/);
+    if (expReg_mail.test(mail.value)){
+      console.log("entra al true");
+      mail.style.border = "";
+    } else {
+      formCompleto = false;
+      mail.style.border = "2px solid red";
+      mail.innerHTML = "Tenés que poner un mail válido";
+    }
+    if (mensaje.value != ""){
+      mensaje.style.border = "";
+    } else {
+      formCompleto = false;
+      mensaje.style.border = "2px solid red";
+    }
+    console.log("segundo form", formCompleto);
+    return formCompleto;
+  }

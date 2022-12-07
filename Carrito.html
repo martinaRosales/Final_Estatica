@@ -105,52 +105,34 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form id="datosTarjeta" class="row g-3 needs-validation" novalidate>
+                  <form id="formulario" value="datosTarjeta" class="row g-3 needs-validation" onsubmit="validarFormulario('datosTarjeta')" novalidate>
                    <div>
                         <span>Número tarjeta</span>
-                        <input type="text" class="form-control" id="numTarjeta" placeholder="#### #### #### ####" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" required>
-                        <div class="invalid-feedback"> 
-                            Ingrese los números como figuran en su tarjeta
-                        </div>
-                        <div class="valid-feedback">
-                            Todo correcto
-                        </div>
+                        <input type="text" class="form-control" id="numTarjeta"  placeholder="#### #### #### ####">
                    </div>
                    <div>
                         <span>Nombre tarjeta</span>
-                        <input type="text" class="form-control" id="nombreT" pattern="[a-zA-Z]+\s?[a-zA-Z]*" required>
-                        <div class="invalid-feedback">
+                        <input type="text" class="form-control" id="nombreT">
+                        <div class="invalid-feedback" id="invalido">
                             Ingrese el nombre como figura en su tarjeta.
-                        </div>
-                        <div class="valid-feedback">
-                            Todo correcto
                         </div>
                     </div>
                    <div>
                         <span>Fecha de expiración</span>
-                        <input type="text" class="form-control" id="vencimiento" pattern="[0-9]{2}/[0-9]{2}" placeholder="MM/YY" required>
-                        <div class="invalid-feedback">
-                            Ingrese la fecha como figura en su tarjeta.
-                        </div>
-                        <div class="valid-feedback">
-                            Todo correcto
-                        </div>
+                        <input type="text" class="form-control" id="vencimiento" placeholder="MM/YY">
                    </div>
                     <div>
                         <span>Código de seguridad</span>
-                        <input type="text" class="form-control" id="ccv" pattern="[0-9]{3}" required>
-                        <div class="invalid-feedback">
+                        <input type="text" class="form-control" id="ccv" maxlength="3">
+                        <div class="invalid-feedback" id="invalido">
                             ingrese el CCV como figura en su tarjeta.
-                        </div>
-                        <div class="valid-feedback">
-                            Todo correcto
                         </div>
                     </div>
                   
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn text-light" id="botonModal">Realizar compra</button>
+                  <button type="submit" class="btn text-light" id="botonSubmit">Realizar compra</button>
                 </div>
             </form>
               </div>

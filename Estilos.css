@@ -9,6 +9,8 @@ body {
   min-height: 100vh;
   max-width: 100%;
   margin: 0 auto;
+  --textoDanger: #ef3c23;
+  --textoCorrect: #198754;
 }
 
 footer {
@@ -90,10 +92,20 @@ footer {
   color: white;
 }
 
-.invalido{
-  color: #ff4136;
+#botonSubmit {
+  background-color: #e91e63;
+  color: white;
 }
 
-.valido {
-  color: #198754;
+.invalid-feedback{
+  color: var(--textoDanger);
+}
+
+.input {
+  width: max-content;
+  border-radius: 4px;
+}
+
+.input.invalid{
+  border: 1px solid var(--textoDanger);
 }

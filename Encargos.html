@@ -70,31 +70,35 @@
                         <div class="accordion-body">
                             En el formulario debajo de esta explicación ingresá tu mail y las especificaciones de tu pedido
                             que pueden ser una descripción del producto, la cantidad de unidades deseadas, si lo querés pintado 
-                            y un aproximado de para cuándo lo querés.<br>
+                            y un aproximado de para cuándo lo querés. También podés subir una imagen o un archivo imprimible apto para 
+                            impresora 3D.<br>
                             Nosotros luego de revisar tu encargo nos comunicaremos vía mail para concretar detalles respecto a tu pedido.
                         </div>
                       </div>
                     </div>
                 </div>
                
-            <form class="needs-validation" id="encargo" novalidate>
+            <form class="needs-validation" id="formulario" onsubmit="validarFormulario('encargos')" novalidate>
                 <div class="mb-3 mt-3">
                     <input type="hidden" value="Besto3d.Estatica@gmail.com" name="mailRecibe">
                     <input type="hidden" value="Encargo personalizado" name="asunto">
                     <label for="exampleFormControlInput1" class="form-label">Mail</label>
-                    <input type="email" class="form-control" name="mailEnvia" placeholder="name@example.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
-                    <div class="invalid-feedback">
-                        Tenés que ingresar un mail válido.
+                    <input type="email" class="form-control" name="mailEnvia" id="mail" placeholder="name@example.com">
+                    <div id="invalid-feedback" >
+                        
                     </div>
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Descripción del producto</label>
-                    <textarea class="form-control" name="mensaje" rows="3" required></textarea>
-                    <div class="invalid-feedback">
-                        Tenés que ingresar un texto con tu pedido.
-                    </div>
+                    <textarea class="form-control" name="mensaje" id="mensaje" rows="3"></textarea>
                   </div>
-                  <button type="submit" class="btn text-light" id="botonModal">Realizar pedido</button>
+
+                  <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Archivos de referencia</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                  </div>
+
+                  <button type="submit" class="btn text-light" id="botonSubmit">Realizar pedido</button>
                   <button type="reset" class="btn text-light btn-secondary">Borrar</button>
             </form>
 
