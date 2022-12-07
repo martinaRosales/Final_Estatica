@@ -58,7 +58,6 @@ function validarTarjeta(){
 
     vencimiento.style.border = "";
   } else {
-    console.log("entra a vencimiento");
     vencimiento.style.border = "2px solid red";
     formCompleto = false;
   }
