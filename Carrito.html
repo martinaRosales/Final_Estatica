@@ -109,22 +109,28 @@
                    <div>
                         <span>Número tarjeta</span>
                         <input type="text" class="form-control" id="numTarjeta"  placeholder="#### #### #### ####">
-                   </div>
+                        <div class="wrongInput" id="divNumTarjeta">
+                          ingrese el número como figura en su tarjeta.
+                      </div>
+                      </div>
                    <div>
                         <span>Nombre tarjeta</span>
                         <input type="text" class="form-control" id="nombreT">
-                        <div class="invalid-feedback" id="invalido">
+                        <div class="wrongInput" id="divNombre">
                             Ingrese el nombre como figura en su tarjeta.
                         </div>
                     </div>
                    <div>
                         <span>Fecha de expiración</span>
                         <input type="text" class="form-control" id="vencimiento" placeholder="MM/YY">
+                        <div class="wrongInput" id="divVencimiento">
+                          ingrese la fecha de vencimiento como figura en su tarjeta.
+                      </div>
                    </div>
                     <div>
                         <span>Código de seguridad</span>
                         <input type="text" class="form-control" id="ccv" maxlength="3">
-                        <div class="invalid-feedback" id="invalido">
+                        <div class="wrongInput" id="divCCV">
                             ingrese el CCV como figura en su tarjeta.
                         </div>
                     </div>

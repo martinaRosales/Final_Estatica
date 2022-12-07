@@ -95,3 +95,7 @@ footer {
   color: white;
 }
 
+.wrongInput {
+  color: red;
+  display: none;
+}

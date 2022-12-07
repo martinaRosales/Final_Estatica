@@ -12,9 +12,17 @@ const ccv = document.getElementById("ccv");
 const mail = document.getElementById("mail");
 const mensaje = document.getElementById("mensaje");
   
+const WrongInput = "2px solid red";
 
 
 
+var mensajesError = Array();
+mensajesError[0] =  document.getElementById('divMail');
+mensajesError[1] = document.getElementById('divMensaje');
+mensajesError[2] = document.getElementById('divNumTarjeta');
+mensajesError[3] = document.getElementById('divNombre');
+mensajesError[4] = document.getElementById('divVencimiento');
+mensajesError[5] = document.getElementById('divCCV');
 
 
 function validarFormulario (form){
@@ -30,7 +38,14 @@ function validarFormulario (form){
   }
 }
 
-
+function ocultarDiv(div){
+  mensajesError.find(div);
+  if (div.oculto === 'block'){
+    div.oculto = 'none';
+  } else {
+    div.oculto = 'block';
+  }
+}
 
 function validarTarjeta(){
 
@@ -42,31 +57,38 @@ function validarTarjeta(){
 
   if (expReg_numT.test(numTarjeta.value)){
     numTarjeta.style.border = "";
+    mensajesError[2].style.display = 'none';
   } else {
     formCompleto = false;
-    numTarjeta.style.border = "2px solid red";
+    numTarjeta.style.border = WrongInput;
+    mensajesError[2].style.display = 'block';
   }
 
   if (expReg_nombre.test(nombreT.value)){
     nombreT.style.border = "";
+    mensajesError[3].style.display = 'none';
   } else {
-    nombreT.style.border = "2px solid red";
+    nombreT.style.border = WrongInput;
     formCompleto = false;
+    mensajesError[3].style.display = 'block';
   }
 
   if (expReg_vencimiento.test(vencimiento.value)){
-
     vencimiento.style.border = "";
+    mensajesError[4].style.display = 'none';
   } else {
-    vencimiento.style.border = "2px solid red";
+    vencimiento.style.border = WrongInput;
     formCompleto = false;
+    mensajesError[4].style.display = 'block';
   }
   
   if (expReg_ccv.test(ccv.value)){
     ccv.style.border = "";
+    mensajesError[5].style.display = 'none';
   } else {
-    ccv.style.border = "2px solid red";
+    ccv.style.border = WrongInput;
     formCompleto = false;
+    mensajesError[5].style.display = 'block';
   }
 
   return formCompleto;
@@ -79,16 +101,19 @@ function validarEncargo(){
   console.log(expReg_mail.test(mail.value));
   if (expReg_mail.test(mail.value)){
     mail.style.border = "";
+    mensajesError[0].style.display = 'none';
   } else {
     formCompleto = false;
-    mail.style.border = "2px solid red";
-    mail.innerHTML = "Tenés que poner un mail válido";
+    mail.style.border = WrongInput;
+    mensajesError[0].style.display = 'block';
   }
   if (mensaje.value != ""){
     mensaje.style.border = "";
+    mensajesError[1].style.display = 'none';
   } else {
     formCompleto = false;
-    mensaje.style.border = "2px solid red";
+    mensaje.style.border = WrongInput;
+    mensajesError[1].style.display = 'block';
   }
   return formCompleto;
 }
