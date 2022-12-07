@@ -97,15 +97,3 @@ footer {
   color: white;
 }
 
-.invalid-feedback{
-  color: var(--textoDanger);
-}
-
-.input {
-  width: max-content;
-  border-radius: 4px;
-}
-
-.input.invalid{
-  border: 1px solid var(--textoDanger);
-}
